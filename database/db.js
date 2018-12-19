@@ -1,8 +1,9 @@
 const Sequelize = require("sequelize")
 const db = {}
-const sequelize = new Sequelize("nodejs_login1", "root1", "", {
-    host: 'localhost',
+const sequelize = new Sequelize(process.env.db, process.env.user, process.env.password, {
+    host: '127.0.0.1' || process.env.host,
     dialect: 'mysql',
+    
     operatorsAliases: false,
 
     pool:   {
